@@ -1,0 +1,10 @@
+#ignore all data files
+data/original_data/
+data/tmp/
+data/calendar.csv
+data/sales*
+data/sell_prices.csv
+documents/
+.Rproj.user
+.Rhistory
+.ipynb_*
