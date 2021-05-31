@@ -20,9 +20,14 @@ Application task for employment at 7lytix (www.7lytix.com) as a data engineer:
                                   /home/tom/projects/m5challange_prod/data/tmp/sell_prices.csv \
                                   /home/tom/projects/m5challange_prod/data/tmp/sales_train_evaluation.csv \
                                    postgresql://tom:1a5d9g@localhost:5432/lnz_sale
-    (no arguments will take the default values used above)
+    (no arguments will use the default subdirectory /data )
 
 -upload_function: outsourced functions used by "main.py"
 
+-information: dataset from kaggle is not part of this upload!
+    - be sure to have 3 datasets in subdirectory /data before execution:
+      -> calendar.csv
+      -> sell_prices.csv
+      -> sales_train_evaluation.csv
 
 -the final dataset is available with: SELECT * FROM walmart.v_sales;
