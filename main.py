@@ -26,8 +26,11 @@
 #       * walmart.v_event: dynamic creation: right now its limited to 3 events per day per country
 #
 # execute the script in terminal:
-#               python main.py <calendarData.csv> <priceData.csv> <salesData.csv> <connectionString>
-#           e.g.: python main.py "data/calendar.csv" "data/sell_prices.csv" "data/sales_train_evaluation.csv" "postgresql://user:password@localhost:5432/lnz_sale"
+#               python main.py <calendarData.csv> <priceData.csv> <salesData.csv> <connectionString> 
+#           e.g.:  python main.py /home/tom/projects/m5challange_prod/data/tmp/calendar.csv \
+#                                  /home/tom/projects/m5challange_prod/data/tmp/sell_prices.csv \
+#                                  /home/tom/projects/m5challange_prod/data/tmp/sales_train_evaluation.csv \
+#                                   postgresql://tom:1a5d9g@localhost:5432/lnz_sale
 #
 # issues:
 #   * week_of_year: 01-01 is part of last years week
@@ -66,6 +69,7 @@ if (len(sys.argv) - 1) != 4 :
     path_saleAmounts = "data/sales_train_evaluation.csv"
     connectionString = "postgresql://tom:1a5d9g@localhost:5432/lnz_sale"
 else :
+    print("Arguments will be used")
     path_calendar = sys.argv[1]
     path_prices = sys.argv[2]
     path_saleAmounts = sys.argv[3]
@@ -73,6 +77,7 @@ else :
 
 
 ##### database settings #####
+print("Create data connection")
 engine = create_engine(connectionString)
 
 ##### create tables and schema #####
